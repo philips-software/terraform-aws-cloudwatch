@@ -5,11 +5,9 @@ This module creates optional a log_group and for that log_group cloud init scrip
 ## Usage
 
 ### Example usages
+
 ```
-
 module "cloudwatch" {
-  source = "git::https://gitlab.ta.philips.com/forest.terraform/terraform-aws-cloudwatch.git"
-
   source = "philips-software/cloudwatch/aws"
   version = "1.0.0"
 
