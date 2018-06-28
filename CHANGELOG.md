@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Changes
+
+- Add proper license file
+- #2: Remove references to old internal repository
+
 ## [1.0.0] - 2018-06-21
 https://github.com/philips-software/terraform-aws-cloudwatch/tags/1.0.0
 - Initial Version
