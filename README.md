@@ -11,7 +11,7 @@ This module creates optional a log_group and for that log_group cloud init scrip
 
 ### Example usages
 
-See also examples in `examples`.
+See also the [full examples](./examples).
 
 ```
 module "cloudwatch" {
@@ -65,6 +65,17 @@ data "template_cloudinit_config" "config" {
 | log\_group\_arn | Arn of the created log group. If not created an empty string is returned. |
 | log\_group\_name | Name of the created log group. If not created an empty string is returned. |
 
+## Automated checks
+Currently the automated checks are limited. In CI the following checks are done for the root and each example.
+- lint: `terraform validate` and `terraform fmt`
+- basic init / get check: `terraform init -get -backend=false -input=false`
+
+## Generation variable documentation
+A markdown table for variables can be generated as follow. Generation requires awk and terraform-docs installed.
+
+```
+ .ci/bin/terraform-docs.sh markdown
+```
 
 ## Philips Forest
 
