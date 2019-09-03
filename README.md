@@ -4,8 +4,8 @@ This module creates optional a log_group and for that log_group cloud init scrip
 
 ## Terraform version
 
-- Terraform 0.12: Pin module to `~> 2+`, submit pull request to branch `terrafomr012`
-- Terraform 0.11: Pin module to `~> 1.x`, submit pull request to branch `develop`
+- Terraform 0.12: Pin module to `~> 2+`, submit pull request to branch `develop`
+- Terraform 0.11: Pin module to `~> 1.x`, submit pull request to branch `terrafomr011`
 
 ## Usage
 
@@ -48,22 +48,22 @@ data "template_cloudinit_config" "config" {
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| create\_log\_group | Indicates if the log group needs to be created by the module. | bool | `"true"` | no |
-| environment | Logical name of the environment, will be used as prefix and for tagging. | string | n/a | yes |
-| name\_suffix | Logical name to append to the log group name. | string | n/a | yes |
-| tags | A map of tags to add to the resources | map(string) | `<map>` | no |
+| Name               | Description                                                              |    Type     | Default  | Required |
+| ------------------ | ------------------------------------------------------------------------ | :---------: | :------: | :------: |
+| create\_log\_group | Indicates if the log group needs to be created by the module.            |    bool     | `"true"` |    no    |
+| environment        | Logical name of the environment, will be used as prefix and for tagging. |   string    |   n/a    |   yes    |
+| name\_suffix       | Logical name to append to the log group name.                            |   string    |   n/a    |   yes    |
+| tags               | A map of tags to add to the resources                                    | map(string) | `<map>`  |    no    |
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| amazon\_linux\_cloudinit\_ec2\_part | Cloud init part to install awslogs and configure logging for EC2. |
-| amazon\_linux\_cloudinit\_ecs\_part | Cloud init part to install awslogs and configure logging for ECS. |
-| amazon\_linux\_cloudinit\_ecs\_upstart\_part | Cloud init part to update the upstart job to be aware of the ECS cluster. |
-| log\_group\_arn | Arn of the created log group. If not created an empty string is returned. |
-| log\_group\_name | Name of the created log group. If not created an empty string is returned. |
+| Name                                         | Description                                                                |
+| -------------------------------------------- | -------------------------------------------------------------------------- |
+| amazon\_linux\_cloudinit\_ec2\_part          | Cloud init part to install awslogs and configure logging for EC2.          |
+| amazon\_linux\_cloudinit\_ecs\_part          | Cloud init part to install awslogs and configure logging for ECS.          |
+| amazon\_linux\_cloudinit\_ecs\_upstart\_part | Cloud init part to update the upstart job to be aware of the ECS cluster.  |
+| log\_group\_arn                              | Arn of the created log group. If not created an empty string is returned.  |
+| log\_group\_name                             | Name of the created log group. If not created an empty string is returned. |
 
 ## Automated checks
 Currently the automated checks are limited. In CI the following checks are done for the root and each example.
